@@ -140,7 +140,7 @@ function y(a, b, c) {
   this.h = null;
   this.i = String(c);
   a = this.g.hostname;
-  /hatch.dm|medium.com/.test(a) && (a = "api." + a);
+  /hatch.dm|medium.com/.test(a) && (a = "" + a);
   a = this.g.protocol + "//" + a;
   this.g.port && "443" != this.g.port && (a += ":" + this.g.port);
   this.k = a;
