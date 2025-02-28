@@ -6,11 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			#child{
-					margin: 30px 0;
-				}
-		</style>
 	</head>
 	<body class="is-preload">
 
@@ -36,6 +31,8 @@
 					</ul>
 				</nav>
 
+
+
 				<!-- Banner -->
 				<!-- Note: The "styleN" class below should match that of the header element. -->
 					<section id="banner" class="style2">
@@ -44,36 +41,34 @@
 								<img src="images/pic07.jpg" alt="" />
 							</span>
 							<header class="major">
-								<h1>Blogs</h1>
+								<h1>My Blog Posts</h1>
 							</header>
 						</div>
 					</section>
 
+
+					<div id="main">
+
+
+						
+								
+					</div>
+
+
+
 				<!-- Main -->
-					<section id="main">
+					<div id="main">
+						
+		
 
-						<!-- One -->
-						<div class="inner" id="parent">
-								<div>
-									<div id="child">
-										<script async src="assets/js/embed.js"></script><a class="m-story" href="https://roottusk.medium.com/making-smart-bulbs-sense-and-create-ambient-scenes-93ffe17db2a1">Making Smart Bulbs sense and create Ambient Scenes</a>
-									</div>
-									<div id="child">
-										<script async src="assets/js/embed.js"></script><a class="m-story" href="https://roottusk.medium.com/not-so-blindrush-cve-2019-6340-55d1e2a741ad">Not so Blin D Rush CVE-2019–6340</a>
-									</div>
-									<div id="child">
-										<script async src="assets/js/embed.js"></script><a class="m-story" href="https://roottusk.medium.com/helping-zelda-capture-flags-nullcon-hackim-2020-f2480099cc3c">Helping Zelda Capture Flags-Nullcon HackIM 2020</a>
-									</div>
-									<div id="child">
-										<script async src="assets/js/embed.js"></script><a class="m-story" href="https://roottusk.medium.com/hackerfest2019-writeup-331cf1923473">HackerFest 2019 Walkthrough</a>
-									</div>
-									<div id="child">
-										<script async src="assets/js/embed.js"></script><a class="m-story" href="https://roottusk.medium.com/pico-ctf-2018-caesar-cipher-2-writeup-1a3d8bfc3169">Pico CTF 2018 : Caesar Cipher 2 Writeup</a>
-									</div>
-						</div>
-					</section>
-
-
+						<section class="style2">
+							<div class="inner">
+								<header class="major">
+									<h2>Latest Blogs</h2>
+								</header>
+								<div id="blog-container" class="spotlights"></div>
+							</div>
+						</section>			
 
 				<!-- Footer -->
 				<footer id="footer">
@@ -108,6 +103,39 @@
 
 			gtag('config', 'G-F7XTCBR1VT');
 			</script>
+			<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			fetch("https://api.rss2json.com/v1/api.json?rss_url=https://roottusk.medium.com/feed")
+				.then(response => response.json())
+				.then(data => {
+					let blogContainer = document.getElementById("blog-container");
+					data.items.forEach(item => {
+						let tempDiv = document.createElement("div");
+						tempDiv.innerHTML = item.content;
+						let imgSrc = tempDiv.querySelector("img") ? tempDiv.querySelector("img").src : "images/default-blog.jpg";
+						let blogHtml = `
+							<section>
+								<a class="image">
+									<img src="${imgSrc}" alt="Blog Image" />
+								</a>
+								<div class="content">
+									<div class="inner">
+										<header class="major">
+											<h3>${item.title}</h3>
+										</header>
+										<ul class="actions">
+											<li><a href="${item.link}" target="_blank" class="button">Read More</a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+						`;
+						blogContainer.innerHTML += blogHtml;
+					});
+				})
+				.catch(error => console.error("Error fetching blog posts:", error));
+		});
+	</script>
 
 	</body>
 </html>
