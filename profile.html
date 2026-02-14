@@ -6,6 +6,62 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.timeline {
+				position: relative;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+			.timeline-item {
+				padding: 20px 40px;
+				position: relative;
+				background-color: inherit;
+				border-left: 3px solid #9bf1ff;
+				margin-left: 20px;
+			}
+			.timeline-item::before {
+				content: '';
+				position: absolute;
+				width: 15px;
+				height: 15px;
+				left: -9px;
+				background-color: #9bf1ff;
+				border: 4px solid #242943;
+				top: 25px;
+				border-radius: 50%;
+				z-index: 1;
+			}
+			.timeline-date {
+				font-size: 0.9em;
+				color: #9bf1ff;
+				margin-bottom: 5px;
+			}
+			.timeline-title {
+				font-size: 1.2em;
+				font-weight: bold;
+				margin-bottom: 5px;
+			}
+			.timeline-company {
+				font-size: 1em;
+				color: #8d93a5;
+				margin-bottom: 10px;
+			}
+			.timeline-description {
+				font-size: 0.95em;
+				line-height: 1.6;
+			}
+			.timeline-description ul {
+				margin-top: 10px;
+				padding-left: 20px;
+			}
+			.timeline-description li {
+				margin-bottom: 8px;
+			}
+			.section-header {
+				text-align: center;
+				margin-bottom: 40px;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -13,7 +69,6 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-				<!-- Note: The "styleN" class below should match that of the banner element. -->
 				<header id="header" class="alt">
 					<a href="index.html" class="logo"><strong>roottusk</strong></a>
 					<nav>
@@ -34,21 +89,95 @@
 				</nav>
 
 				<!-- Banner -->
-				<!-- Note: The "styleN" class below should match that of the header element. -->
 					<section id="banner" class="style2">
 						<div class="inner">
 							<span class="image">
 								<img src="images/pic07.jpg" alt="" />
 							</span>
 							<header class="major">
-								<h1>Check back soon :P</h1>
+								<h1>Professional Journey</h1>
 							</header>
+							<div class="content">
+								<p>Security Engineer | Penetration Tester | Vulnerability Researcher</p>
+							</div>
 						</div>
 					</section>
 
 				<!-- Main -->
 					<div id="main">
 
+						<!-- Experience Timeline -->
+						<section id="one">
+							<div class="inner">
+								<header class="section-header">
+									<h2>Work Experience</h2>
+								</header>
+								<div class="timeline">
+									
+									<!-- W.W. Grainger - Security Engineer II -->
+									<div class="timeline-item">
+										<div class="timeline-date">July 2025 - Present</div>
+										<div class="timeline-title">Security Engineer II</div>
+										<div class="timeline-company">W.W. Grainger, Chicago, IL | Identity and Access Management Team</div>
+									</div>
+
+									<!-- W.W. Grainger - Threat and Vulnerability Management -->
+									<div class="timeline-item">
+										<div class="timeline-date">January 2025 - July 2025</div>
+										<div class="timeline-title">Security Engineer</div>
+										<div class="timeline-company">W.W. Grainger, Chicago, IL | Threat and Vulnerability Management Team</div>
+									</div>
+
+									<!-- W.W. Grainger - IAM Security Engineer -->
+									<div class="timeline-item">
+										<div class="timeline-date">July 2024 - December 2024</div>
+										<div class="timeline-title">Security Engineer</div>
+										<div class="timeline-company">W.W. Grainger, Chicago, IL | Identity and Access Management Team</div>
+									</div>
+
+									<!-- Holm Security -->
+									<div class="timeline-item">
+										<div class="timeline-date">September 2021 - July 2022</div>
+										<div class="timeline-title">Security Research Engineer (Remote)</div>
+										<div class="timeline-company">Holm Security AB, Stockholm, Sweden</div>
+									</div>
+
+									<!-- Tata Consultancy Services -->
+									<div class="timeline-item">
+										<div class="timeline-date">July 2019 - September 2021</div>
+										<div class="timeline-title">Cyber Security Analyst</div>
+										<div class="timeline-company">Tata Consultancy Services Ltd., Bhubaneswar, India | Enterprise Vulnerability Management</div>
+									</div>
+
+								</div>
+							</div>
+						</section>
+
+						<!-- Education -->
+						<section id="two" style="background-color: #2a2f4a;">
+							<div class="inner">
+								<header class="section-header">
+									<h2>Education</h2>
+								</header>
+								<div class="timeline">
+									
+									<div class="timeline-item">
+										<div class="timeline-date">Graduated May 2024</div>
+										<div class="timeline-title">Master of Science in Secure Computing</div>
+										<div class="timeline-company">Indiana University Bloomington, Bloomington, IN</div>
+									</div>
+
+									<div class="timeline-item">
+										<div class="timeline-date">Graduated June 2019</div>
+										<div class="timeline-title">Bachelor of Engineering in Computer Science</div>
+										<div class="timeline-company">Yeshwantrao Chavan College of Engineering, Nagpur, India</div>
+									</div>
+
+								</div>
+							</div>
+						</section>
+
+					</div>
 
 				<!-- Footer -->
 				<footer id="footer">
